@@ -1,6 +1,6 @@
 {
   "name": "requiem-ui",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "UI element extension to Requiem, an experimental front-end JS framework.",
   "homepage": "http://andrewscwei.github.io/requiem-ui",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "test": "mocha tests --recursive --reporter spec --compilers js:babel-register",
     "clean": "rimraf lib",
     "build": "npm run clean && ncp src lib",
-    "docs": "rimraf docs && jsdoc src -r -R README.md -c .docconfig",
+    "docs": "rimraf docs && jsdoc src -r -R README.md -c .jsdocconfig",
     "play": "rimraf playground/public && pug -O \"{basedir:'playground/app/templates'}\" -P -w -o playground/public playground/app/templates/index.pug & webpack-dev-server --progress --inline --hot --config playground/webpack.config.babel.js --content-base playground/public --port 8080"
   },
   "authors": [
