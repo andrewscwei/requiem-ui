@@ -10,7 +10,6 @@ const buildDir = path.join(__dirname, 'public');
 
 export default {
   cache: true,
-  debug: true,
   devtool: 'eval-source-map',
   context: path.join(sourceDir, 'scripts'),
   entry: {
@@ -24,31 +23,40 @@ export default {
     sourceMapFilename: '[name].map'
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
-      loader: 'babel',
-      exclude: /node_modules/
+      loader: 'babel-loader'
     }, {
       test: /\.[s]?css$/,
-      loaders: [
-        'style',
-        'css',
-        `sass?includePaths=${path.join(sourceDir, 'scripts', 'stylesheets')},outputStyle=expanded,sourceMap`
-      ]
+      use: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader'
+      }, {
+        loader: 'sass-loader',
+        options: {
+          includePaths: [`${path.join(sourceDir, 'scripts', 'stylesheets')}`],
+          outputStyle: 'expanded',
+          sourceMap: true
+        }
+      }]
     }, {
       test: /\.pug$/,
-      loader: `pug?root=${path.join(sourceDir, 'templates')}`
+      loader: `pug-loader?root=${path.join(sourceDir, 'templates')}`
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.scss', '.pug'],
-    root: [
+    extensions: ['.js', '.scss', '.pug'],
+    modules: [
       path.join(sourceDir),
       path.join(sourceDir, 'scripts'),
-      path.join(__dirname, '../', 'lib')
-    ],
-    modulesDirectories: [
+      path.join(__dirname, '../', 'lib'),
       path.join(__dirname, '../', 'node_modules')
     ]
-  }
+  },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    })
+  ]
 }
