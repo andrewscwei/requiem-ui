@@ -1,6 +1,6 @@
 {
   "name": "requiem-ui",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "UI element extension to Requiem, an experimental front-end JS framework.",
   "homepage": "http://andrewscwei.github.io/requiem-ui",
   "license": "MIT",
