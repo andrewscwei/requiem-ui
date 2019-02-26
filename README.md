@@ -1,4 +1,4 @@
-# Requiem-UI [![Circle CI](https://circleci.com/gh/andrewscwei/requiem-ui/tree/master.svg?style=svg)](https://circleci.com/gh/andrewscwei/requiem-ui.svg/tree/master) [![npm version](https://badge.fury.io/js/requiem-ui.svg)](https://badge.fury.io/js/requiem-ui)
+# Requiem-UI [![npm version](https://badge.fury.io/js/requiem-ui.svg)](https://badge.fury.io/js/requiem-ui)
 
 Library of UI elements to extend [Requiem](https://github.com/andrewscwei/requiem).
 
