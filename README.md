@@ -1,4 +1,4 @@
-# Requiem-UI [![npm version](https://badge.fury.io/js/requiem-ui.svg)](https://badge.fury.io/js/requiem-ui)
+# Requiem-UI ![](https://img.shields.io/maintenance/no/2016)
 
 Library of UI elements to extend [Requiem](https://github.com/andrewscwei/requiem).
 
